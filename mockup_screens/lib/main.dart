@@ -1,25 +1,30 @@
+// My Main.dart
+
 import 'package:flutter/material.dart';
 import 'package:mockup_screens/screens/mockup_screen_one.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MovieApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MovieApp extends StatelessWidget {
+  const MovieApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Mockup Screens',
       debugShowCheckedModeBanner: false,
+      title: 'Mockupscreens',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.blue,
+        brightness: Brightness.dark,
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.black,
+          elevation: 0,
+        ),
       ),
-      home: const MockupScreenOne(
-        title: 'TMDB',
-      ),
+      home: const HomeScreen(),
     );
   }
 }
